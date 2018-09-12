@@ -19,6 +19,8 @@ class TTSharedCollectionViewDiaryCell: UICollectionViewCell {
         let tempView = TTSharedDiaryView(frame: self.view.bounds)
         self.view.addSubview(tempView)
         
+        
+        
         locationLabel.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
         locationLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(93)

@@ -71,5 +71,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>KoPubBatang_Pro Bold.otf</string>
+		<string>KoPubBatang_Pro Light.otf</string>
+		<string>KoPubBatang_Pro Medium.otf</string>
+		<string>KoPubDotum_Pro Bold.otf</string>
+		<string>KoPubDotum_Pro Light.otf</string>
+		<string>KoPubDotum_Pro Medium.otf</string>
+		<string>Montserrat-Light.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+	</array>
 </dict>
 </plist>

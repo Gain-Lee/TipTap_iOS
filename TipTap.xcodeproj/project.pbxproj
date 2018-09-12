@@ -10,6 +10,15 @@
 		07BD1428244B322D6BEBCACB /* Pods_TipTapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */; };
 		34F647004371BECCAD0A25F5 /* Pods_TipTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6376FA0B5704EE127D34759 /* Pods_TipTap.framework */; };
 		3F041A962C6129A655139026 /* Pods_TipTapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACC9DFC0C426B15FA874266 /* Pods_TipTapUITests.framework */; };
+		A02230B121493DE500663F54 /* KoPubDotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230AB21493DE300663F54 /* KoPubDotum_Pro Light.otf */; };
+		A02230B221493DE500663F54 /* KoPubBatang_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230AC21493DE300663F54 /* KoPubBatang_Pro Light.otf */; };
+		A02230B321493DE500663F54 /* KoPubBatang_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230AD21493DE400663F54 /* KoPubBatang_Pro Bold.otf */; };
+		A02230B421493DE500663F54 /* KoPubDotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230AE21493DE400663F54 /* KoPubDotum_Pro Medium.otf */; };
+		A02230B521493DE500663F54 /* KoPubBatang_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230AF21493DE500663F54 /* KoPubBatang_Pro Medium.otf */; };
+		A02230B621493DE500663F54 /* KoPubDotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A02230B021493DE500663F54 /* KoPubDotum_Pro Bold.otf */; };
+		A02BE7CC214942E900BA336A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CA214942E800BA336A /* Montserrat-Regular.ttf */; };
+		A02BE7CD214942E900BA336A /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CB214942E900BA336A /* Montserrat-Light.ttf */; };
+		A02BE7CF2149433C00BA336A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CE2149433C00BA336A /* Montserrat-Medium.ttf */; };
 		A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */; };
 		A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD1212CFAB200D76543 /* TestDiary.swift */; };
 		A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */; };
@@ -99,6 +108,15 @@
 		8A6C5BA4B6A3D70CF9F7B527 /* Pods-TipTapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTapTests/Pods-TipTapTests.release.xcconfig"; sourceTree = "<group>"; };
 		94155FE91CA75E45A37911BD /* Pods_TipTapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipTapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BA63B41D47F3B40D2519F /* Pods-TipTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipTap.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipTap/Pods-TipTap.release.xcconfig"; sourceTree = "<group>"; };
+		A02230AB21493DE300663F54 /* KoPubDotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubDotum_Pro Light.otf"; sourceTree = "<group>"; };
+		A02230AC21493DE300663F54 /* KoPubBatang_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubBatang_Pro Light.otf"; sourceTree = "<group>"; };
+		A02230AD21493DE400663F54 /* KoPubBatang_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubBatang_Pro Bold.otf"; sourceTree = "<group>"; };
+		A02230AE21493DE400663F54 /* KoPubDotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubDotum_Pro Medium.otf"; sourceTree = "<group>"; };
+		A02230AF21493DE500663F54 /* KoPubBatang_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubBatang_Pro Medium.otf"; sourceTree = "<group>"; };
+		A02230B021493DE500663F54 /* KoPubDotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubDotum_Pro Bold.otf"; sourceTree = "<group>"; };
+		A02BE7CA214942E800BA336A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		A02BE7CB214942E900BA336A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		A02BE7CE2149433C00BA336A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewListCell.swift; sourceTree = "<group>"; };
 		A0AD5DD1212CFAB200D76543 /* TestDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDiary.swift; sourceTree = "<group>"; };
 		A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewDiaryCell.swift; sourceTree = "<group>"; };
@@ -224,9 +242,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A02230AA21493DA700663F54 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A02BE7CE2149433C00BA336A /* Montserrat-Medium.ttf */,
+				A02BE7CB214942E900BA336A /* Montserrat-Light.ttf */,
+				A02BE7CA214942E800BA336A /* Montserrat-Regular.ttf */,
+				A02230AD21493DE400663F54 /* KoPubBatang_Pro Bold.otf */,
+				A02230AC21493DE300663F54 /* KoPubBatang_Pro Light.otf */,
+				A02230AF21493DE500663F54 /* KoPubBatang_Pro Medium.otf */,
+				A02230B021493DE500663F54 /* KoPubDotum_Pro Bold.otf */,
+				A02230AB21493DE300663F54 /* KoPubDotum_Pro Light.otf */,
+				A02230AE21493DE400663F54 /* KoPubDotum_Pro Medium.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		A11F61A82123E6A90029E80A = {
 			isa = PBXGroup;
 			children = (
+				A02230AA21493DA700663F54 /* fonts */,
 				A11F61B32123E6A90029E80A /* TipTap */,
 				A11F61C82123E6AA0029E80A /* TipTapTests */,
 				A11F61D32123E6AB0029E80A /* TipTapUITests */,
@@ -589,19 +624,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */,
+				A02230B121493DE500663F54 /* KoPubDotum_Pro Light.otf in Resources */,
+				A02230B221493DE500663F54 /* KoPubBatang_Pro Light.otf in Resources */,
 				A13FF22D2123FBEB00FB5642 /* mask.png in Resources */,
+				A02230B321493DE500663F54 /* KoPubBatang_Pro Bold.otf in Resources */,
+				A02230B421493DE500663F54 /* KoPubDotum_Pro Medium.otf in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
 				A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */,
+				A02230B521493DE500663F54 /* KoPubBatang_Pro Medium.otf in Resources */,
 				A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */,
+				A02BE7CD214942E900BA336A /* Montserrat-Light.ttf in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
+				A02BE7CC214942E900BA336A /* Montserrat-Regular.ttf in Resources */,
 				A13FF2192123EBB600FB5642 /* TTLogin.storyboard in Resources */,
 				BAD3AB792126F09F008F417C /* MyDiary.storyboard in Resources */,
+				A02230B621493DE500663F54 /* KoPubDotum_Pro Bold.otf in Resources */,
 				A11F61BA2123E6A90029E80A /* Main.storyboard in Resources */,
 				A13FF2242123F86000FB5642 /* SharedDiary.storyboard in Resources */,
 				A14667A92130D11D00A15CF3 /* TTMyDiaryFirstCell.xib in Resources */,
 				A146679E21307B0700A15CF3 /* sampleImage.jpeg in Resources */,
 				A13FF2412127370C00FB5642 /* EditDiary.storyboard in Resources */,
+				A02BE7CF2149433C00BA336A /* Montserrat-Medium.ttf in Resources */,
 				BAD3AB822126F83F008F417C /* MyDiaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

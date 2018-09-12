@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KoPubDotum_Pro Bold.otf">
+            <string>KoPubDotumPB</string>
+        </array>
+        <array key="KoPubDotum_Pro Light.otf">
+            <string>KoPubDotumPL</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Shared View Controller-->
         <scene sceneID="eoL-fc-hdA">
@@ -20,6 +31,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqW-ro-Ufx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="K0n-HT-A2H">
                                     <size key="itemSize" width="375" height="208"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -61,7 +73,7 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <constraints>
                                                         <constraint firstItem="fNA-rd-Olh" firstAttribute="top" secondItem="NPJ-iD-caQ" secondAttribute="top" constant="8" id="3JE-PW-Jek"/>
@@ -98,10 +110,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-aO-ENz" userLabel="Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="200"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0S-px-aEh" userLabel="bar">
-                                                            <rect key="frame" x="0.0" y="9" width="17" height="1"/>
+                                                            <rect key="frame" x="0.0" y="5" width="17" height="1"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="2He-fL-ClG"/>
@@ -109,29 +121,29 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIP-qd-Pe4" userLabel="Time Label">
-                                                            <rect key="frame" x="25" y="0.0" width="31" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="25" y="0.0" width="33.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we2-aQ-2fJ" userLabel="Diary Number Label">
-                                                            <rect key="frame" x="75" y="0.0" width="249" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="77.5" y="0.0" width="246.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-JS-5V4" userLabel="Diary Location Label">
-                                                            <rect key="frame" x="75" y="21.5" width="249" height="21"/>
+                                                            <rect key="frame" x="75" y="22" width="249" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="MUu-vM-cOc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="KoPubDotumPB" family="KoPubDotum_Pro" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yir-jg-ddC" userLabel="Diary Body Label">
-                                                            <rect key="frame" x="75" y="50.5" width="249" height="97.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="75" y="51" width="249" height="89"/>
+                                                            <fontDescription key="fontDescription" name="KoPubDotumPL" family="KoPubDotum_Pro" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -141,7 +153,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="yir-jg-ddC" secondAttribute="trailing" constant="51" id="ASI-im-QVo"/>
                                                         <constraint firstItem="sIP-qd-Pe4" firstAttribute="top" secondItem="8XU-aO-ENz" secondAttribute="top" id="DW2-gQ-xCZ"/>
                                                         <constraint firstItem="sIP-qd-Pe4" firstAttribute="leading" secondItem="l0S-px-aEh" secondAttribute="trailing" constant="8" id="FBJ-EB-a5P"/>
-                                                        <constraint firstItem="l0S-px-aEh" firstAttribute="top" secondItem="8XU-aO-ENz" secondAttribute="top" constant="9" id="LS8-TW-UXw"/>
+                                                        <constraint firstItem="l0S-px-aEh" firstAttribute="top" secondItem="8XU-aO-ENz" secondAttribute="top" constant="5" id="LS8-TW-UXw"/>
                                                         <constraint firstAttribute="width" constant="375" id="MhR-pE-jjb"/>
                                                         <constraint firstItem="we2-aQ-2fJ" firstAttribute="leading" secondItem="sIP-qd-Pe4" secondAttribute="trailing" constant="19" id="RGM-tl-haG"/>
                                                         <constraint firstItem="yir-jg-ddC" firstAttribute="top" secondItem="n2i-JS-5V4" secondAttribute="bottom" constant="8" id="UE0-Om-Es3"/>
@@ -161,7 +173,7 @@
                                             <constraint firstItem="8XU-aO-ENz" firstAttribute="leading" secondItem="RMN-JY-nD4" secondAttribute="leading" id="Q23-sr-Cu9"/>
                                             <constraint firstAttribute="bottom" secondItem="8XU-aO-ENz" secondAttribute="bottom" id="hqB-xZ-h93"/>
                                             <constraint firstAttribute="trailing" secondItem="8XU-aO-ENz" secondAttribute="trailing" id="m96-uT-SAR"/>
-                                            <constraint firstItem="8XU-aO-ENz" firstAttribute="top" secondItem="RMN-JY-nD4" secondAttribute="top" id="uuU-N9-Wd0"/>
+                                            <constraint firstItem="8XU-aO-ENz" firstAttribute="top" secondItem="RMN-JY-nD4" secondAttribute="top" constant="8" id="uuU-N9-Wd0"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="bodyLabel" destination="yir-jg-ddC" id="lrJ-ar-HA2"/>

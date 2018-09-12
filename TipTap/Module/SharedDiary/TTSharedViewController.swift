@@ -79,7 +79,13 @@ extension TTSharedViewController: UICollectionViewDataSource {
             cell.timeLabel.text = "11:30"
             cell.diaryNumberLabel.text = diary.number
             cell.locationLabel.text = diary.location
-            cell.bodyLabel.text = diary.body
+            
+            let font = UIFont.systemFont(ofSize: 12)
+            let style = NSMutableParagraphStyle()
+            style.paragraphSpacing = -0.2
+            style.lineSpacing = 5
+            let attribute: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:style]
+            cell.bodyLabel.attributedText = NSMutableAttributedString(string: diary.body, attributes: attribute)
             
             return cell
         }
