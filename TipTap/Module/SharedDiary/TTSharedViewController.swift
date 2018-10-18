@@ -12,22 +12,14 @@ import Darwin
 import ScratchCard
 
 
-class TTSharedViewController: TTBaseViewController {
+class TTSharedViewController: TTBaseViewController, TTCanShowAlert {
     
     @IBOutlet var collectionView: UICollectionView!
     
+    private lazy var service = TTSharedDiaryService()
+    
     var scratchView : ScratchUIView!
-    var diarys = [TestDiary]()
-    
-    let location = ["키오스크 카페", "SEOUL COFFEE", "ZERO SPACE"]
-    let body = ["오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!", "오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!","오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!오늘 날씨는 하루종일 맑음. 어제도 오늘도 너무 더워서 아무생각이 들지 않는다. 숙소에서 나와 가장 먼저 들른 곳!"]
-    
-    override func viewWillAppear(_ animated: Bool) {
-        for i in 0..<3 {
-            let diary = TestDiary(number: "#\(i+1)", location: location[i], body: body[i])
-            diarys.append(diary)
-        }
-    }
+    var diaryDataList: [TTDiaryData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +30,10 @@ class TTSharedViewController: TTBaseViewController {
         }
         collectionView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        requestSharedDiaryData()
     }
 
     func attachScratchView(){
@@ -53,31 +49,51 @@ class TTSharedViewController: TTBaseViewController {
         self.view.addSubview(scratchView)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func requestSharedDiaryData() {
+        service.fetchSharedDiaryList {
+            (result) in
+            switch result {
+            case .success(let result):
+                print("result : \(result)")
+                self.diaryDataList = result
+                break
+            case .errorMessage(let errorMsg):
+                print("errorMsg : \(errorMsg)")
+                self.showAlert(title: "", message: errorMsg)
+            default: break
+            }
+        }
     }
 }
 
 extension TTSharedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diarys.count + 1
+        guard let count = self.diaryDataList?.count else {
+            return 1
+        }
+        
+        return count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let diaryList = self.diaryDataList!
+        
         if (indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryCell", for: indexPath) as! TTSharedCollectionViewDiaryCell
-            cell.titleLabel.text = "10\nTIPTAP"
-            cell.locationLabel.text = "from. 서울시 마포구 망원동"
+            cell.titleLabel.text = "\(diaryList.count)\nTIPTAP"
+            cell.locationLabel.text = diaryList[0].location
             return cell
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SharedDiaryListCell", for: indexPath) as! TTSharedCollectionViewListCell
             
-            let diary = diarys[indexPath.row - 1]
-            cell.timeLabel.text = "11:30"
-            cell.diaryNumberLabel.text = diary.number
+            let diary = diaryList[indexPath.row - 1]
+            
+            let date = diary.createdAt!
+            let range = date.index(date.startIndex, offsetBy: 11)...date.index(date.startIndex, offsetBy: 15)
+            cell.timeLabel.text = String(date[range])
+            cell.diaryNumberLabel.text = "\(indexPath.row - 1)"
             cell.locationLabel.text = diary.location
             
             let font = UIFont.systemFont(ofSize: 12)
@@ -85,7 +101,7 @@ extension TTSharedViewController: UICollectionViewDataSource {
             style.paragraphSpacing = -0.2
             style.lineSpacing = 5
             let attribute: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:style]
-            cell.bodyLabel.attributedText = NSMutableAttributedString(string: diary.body, attributes: attribute)
+            cell.bodyLabel.attributedText = NSMutableAttributedString(string: diary.content!, attributes: attribute)
             
             return cell
         }

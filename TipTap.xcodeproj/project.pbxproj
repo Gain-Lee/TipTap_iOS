@@ -19,6 +19,7 @@
 		A02BE7CC214942E900BA336A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CA214942E800BA336A /* Montserrat-Regular.ttf */; };
 		A02BE7CD214942E900BA336A /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CB214942E900BA336A /* Montserrat-Light.ttf */; };
 		A02BE7CF2149433C00BA336A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02BE7CE2149433C00BA336A /* Montserrat-Medium.ttf */; };
+		A036448521781DFD007A11CA /* TTSharedDiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036448421781DFD007A11CA /* TTSharedDiaryService.swift */; };
 		A0AD5DD0212CF91C00D76543 /* TTSharedCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */; };
 		A0AD5DD2212CFAB200D76543 /* TestDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD1212CFAB200D76543 /* TestDiary.swift */; };
 		A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */; };
@@ -118,6 +119,7 @@
 		A02BE7CA214942E800BA336A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		A02BE7CB214942E900BA336A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		A02BE7CE2149433C00BA336A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		A036448421781DFD007A11CA /* TTSharedDiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedDiaryService.swift; sourceTree = "<group>"; };
 		A0AD5DCF212CF91C00D76543 /* TTSharedCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewListCell.swift; sourceTree = "<group>"; };
 		A0AD5DD1212CFAB200D76543 /* TestDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDiary.swift; sourceTree = "<group>"; };
 		A0AD5DD3212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSharedCollectionViewDiaryCell.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				A14667A321307C6E00A15CF3 /* TTDetailDiaryService.swift */,
 				A12211DA21579060004F931D /* TTTodayDiaryService.swift */,
 				BAD3AB3621267165008F417C /* TTMyDiaryService.swift */,
+				A036448421781DFD007A11CA /* TTSharedDiaryService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -634,7 +637,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A146679C21307A6900A15CF3 /* TTDetailImageCell.xib in Resources */,
+				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
 				A02230B121493DE500663F54 /* KoPubDotum_Pro Light.otf in Resources */,
 				A02230B221493DE500663F54 /* KoPubBatang_Pro Light.otf in Resources */,
 				A146679C21307A6900A15CF3 /* TTDetailDiaryCell.xib in Resources */,
@@ -642,9 +645,7 @@
 				A02230B321493DE500663F54 /* KoPubBatang_Pro Bold.otf in Resources */,
 				A02230B421493DE500663F54 /* KoPubDotum_Pro Medium.otf in Resources */,
 				A11F61BF2123E6AA0029E80A /* LaunchScreen.storyboard in Resources */,
-				A14667AD2130D13300A15CF3 /* TTMyDiaryNormalCell.xib in Resources */,
 				A02230B521493DE500663F54 /* KoPubBatang_Pro Medium.otf in Resources */,
-				A14667A221307B3300A15CF3 /* TTDetailTextCell.xib in Resources */,
 				A02BE7CD214942E900BA336A /* Montserrat-Light.ttf in Resources */,
 				A1466791213066AF00A15CF3 /* DetailDiary.storyboard in Resources */,
 				A11F61BC2123E6AA0029E80A /* Assets.xcassets in Resources */,
@@ -887,6 +888,7 @@
 				A11F61B52123E6A90029E80A /* AppDelegate.swift in Sources */,
 				A146679B21307A6900A15CF3 /* TTDetailDiaryCell.swift in Sources */,
 				A12211D521564B59004F931D /* TTCanShowAlert.swift in Sources */,
+				A036448521781DFD007A11CA /* TTSharedDiaryService.swift in Sources */,
 				A0AD5DD4212FE2E600D76543 /* TTSharedCollectionViewDiaryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
