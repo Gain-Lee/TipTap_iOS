@@ -8,26 +8,53 @@
 
 import UIKit
 
-class TTTodayDiaryViewController: TTBaseViewController {
+class TTTodayDiaryViewController: TTBaseViewController,TTCanShowAlert {
     @IBOutlet weak var postView: UIView!
+    private var mainView       : TTPostMainView?
+    private lazy var service = TTTodayDiaryService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mainView = TTPostMainView(frame: self.view.frame)
-        mainView.pressedPost = { (postIndex) in
-            
-            self.show(TTDetailDiaryWireFrame.createModule(), sender: nil)
-        }
-        self.postView.addSubview(mainView)
+        
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .default
+        requestTodayDiaryData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
+    
+    //MARK: Draw UI
+    override func setupUI() {
+        mainView = TTPostMainView(frame: self.view.frame)
+        mainView?.pressedPost = { (diaryDatas) in
+            self.show(TTDetailDiaryWireFrame.createModule(diaryDatas: diaryDatas), sender: nil)
+        }
+        
+        self.postView.addSubview(mainView!)
+    }
+    
+    
+    //MARK: Request today diary data
+    func requestTodayDiaryData(){
+        guard let _ = mainView else { return }
+        service.fetchTodayDiary { (result) in
+            switch result {
+            case .success(let result):
+                self.mainView?.dataSet = TTDiaryDataSet(diaryDataList: result.diaryDataList!, stampNameList: result.stampNameList!)
+                break
+            case .errorMessage(let errorMsg):
+                self.showAlert(title: "", message: errorMsg)
+                break
+                
+            default : break
+            }
+        }
     }
 }

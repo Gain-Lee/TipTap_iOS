@@ -9,6 +9,7 @@
 import UIKit
 import KakaoOpenSDK
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,9 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 로그인,로그아웃 상태 변경 받기
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification),
-                                               name: NSNotification.Name.KOSessionDidChange,
+                                               selector: #selector(AppDelegate.sessionDidChangeWithNotification),
+                                               name: NSNotification.Name(rawValue: "sessionDidChange"),
                                                object: nil)
+        
+        
         
         reloadRootViewController()
         return true
@@ -36,14 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginStoryboard = UIStoryboard(name: "TTLogin", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let navigationController = loginStoryboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
-        let navigationController2 = loginStoryboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
 
         
         let viewController = loginStoryboard.instantiateViewController(withIdentifier: "TTLoginViewController") as UIViewController
-//        navigationController.pushViewController(viewController, animated: true)
         let viewController2 = mainStoryboard.instantiateViewController(withIdentifier: "TTMainPageViewController") as UIViewController
-//        navigationController2.pushViewController(viewController2, animated: true)
         
         
         self.loginViewController = viewController
@@ -53,18 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
-//        if !isOpened {
-//            let mainViewController = self.mainViewController as! UINavigationController
-//            mainViewController.popToRootViewController(animated: true)
-//        }
-        
+
         self.window?.rootViewController = isOpened ? UINavigationController(rootViewController: self.mainViewController!)  : UINavigationController(rootViewController: self.loginViewController!)
         self.window?.makeKeyAndVisible()
     }
     
     
     
-    @objc func kakaoSessionDidChangeWithNotification() {
+    @objc func sessionDidChangeWithNotification() {
         reloadRootViewController()
     }
     
@@ -104,6 +99,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    func searchFrontViewController(_ viewController : UIViewController)->UIViewController{
+        var vc = viewController
+        if let presentVC = viewController.presentedViewController {
+            vc = self.searchFrontViewController(presentVC)
+        }
+        
+        return vc
+    }
+    
+    func searchFrontViewController()->UIViewController{
+        var vc = appDelegate?.window?.rootViewController
+        vc = self.searchFrontViewController(vc!)
+        return vc!
+    }
 }
 
